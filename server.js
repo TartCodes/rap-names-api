@@ -1,6 +1,9 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
 const PORT = 8000
+
+app.use(cors())
 
 const rappers = {
     '21 savage':{
@@ -36,6 +39,6 @@ app.get('/api/:rapperName', (req, res) => { // the ':' here in express is saying
     //res.json(rappers)
 })
 
-app.listen(process.env.PORT || PORT, () => {
+app.listen(process.env.PORT || PORT, () => { //process.env.PORT will default to heroku port first
     console.log(`The server is running on ${PORT}! You better go catch it! hehe`)
 })
