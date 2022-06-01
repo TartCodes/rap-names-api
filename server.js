@@ -4,26 +4,29 @@ const cors = require("cors");
 const PORT = 8000;
 
 app.use(cors());
+app.use( express.static('./'))
 
 const rappers = {
   "21 savage": {
-    age: 29,
-    birthName: "Sheyaa Bin Abraham-Joseph",
-    birthLocation: "London, England",
+    'age': 29,
+    'birthName': "Sheyaa Bin Abraham-Joseph",
+    'birthLocation': "London, England",
   },
 
   "chance the rapper": {
-    age: 29,
-    birthName: "Chancleor Bennett",
-    birthLocation: "Chicago, Illinois",
+    'age': 29,
+    'birthName': "Chancleor Bennett",
+    'birthLocation': "Chicago, Illinois",
   },
 
   dylan: {
-    age: 29,
-    birthName: "Dylan",
-    birthLocation: "Dylan, Dylon",
+    'age': 29,
+    'birthName': "Dylan",
+    'birthLocation': "Dylan, Dylon",
   },
 };
+
+
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
